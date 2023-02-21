@@ -32,6 +32,7 @@ public class StudentManager {
                 break;
             }
         }
+        writeFile();
     }
     public String removeStudentById(String inputID) {
         for (Student student : studentList) {
@@ -40,9 +41,11 @@ public class StudentManager {
                 return "Xóa thành công";
             }
         }
+        writeFile();
         return "Không tìm được sinh viên với mã sinh viên trên";
     }
     public void displayStudent() {
+        readFile();
         for (Student student : studentList) {
             System.out.println(student);
         }

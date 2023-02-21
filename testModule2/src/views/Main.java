@@ -31,11 +31,7 @@ public class Main {
                 case 2 -> studentManager.addNewStudent(addStudent());
                 case 3 -> editProfile();
                 case 4 -> deleteStudent();
-                case 5 -> {
-                    System.out.println("Sắp xếp sinh viên theo điểm từ tấp đến cao:");
-                    studentManager.sortStudentByPoint();
-                    studentManager.displayStudent();
-                }
+                case 5 -> sortByStudents();
                 case 6 -> studentManager.readFile();
                 case 7 -> studentManager.writeFile();
                 case 8 -> System.out.println("Hẹn gặp lại!");
@@ -121,5 +117,22 @@ public class Main {
         }
         System.err.println("Không có mã sinh viên cân tìm");
         return checkStudentId1();
+    }
+    public static void sortByStudents() {
+        System.out.println("""
+                --------SẮP XẾP SINH VIÊN THEO ĐIỂM TRUNG BÌNH-------
+                chọn chức năng theo số (để tiếp tục)
+                1. Sắp xếp điểm trung bình tăng dần
+                2. Sắp xếp điểm trung bình giảm dần
+                3. Thoát
+                """);
+        System.out.println("Chọn chức năng: ");
+        checkInput = Integer.parseInt(input.nextLine());
+        switch (checkInput) {
+            case 1 -> studentManager.sortStudentByPoint();
+            case 2 -> {
+            }
+            default -> System.out.println("Nhập dữ liệu không đúng !!");
+        }
     }
 }
